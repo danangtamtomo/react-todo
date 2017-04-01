@@ -30,11 +30,11 @@
 
 .todo-create-init:focus{
   height: 140px;
-  -webkit-transition: height 0.6s;
-  -moz-transition: height 0.6s;
-  -ms-transition: height 0.6s;
-  -o-transition: height 0.6s;
-  transition: height 0.6s;
+  -webkit-transition: margin 0.6s, height 0.6s, top 0.6s, left 0.6s;
+  -moz-transition: margin 0.6s, height 0.6s, top 0.6s, left 0.6s;
+  -ms-transition: margin 0.6s, height 0.6s, top 0.6s, left 0.6s;
+  -o-transition: margin 0.6s, height 0.6s, top 0.6s, left 0.6s;
+  transition: margin 0.6s, height 0.6s, top 0.6s, left 0.6s;
 }
 
 .App-intro {
@@ -47,12 +47,15 @@
   -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
   box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
 }
 
 .todo-created-at {
-  border: groove thin bisque;
-  text-align: left;
+  /*border: groove thin bisque;*/
+  text-align: right;
   padding: 3px;
+  font-size: 11px;
+  color: #4d4d4d;
 }
 
 
@@ -64,6 +67,37 @@
 .todo-list {
   margin-top: 40px;
 }
+
+.todo-card-footer {
+  background: #f1d736;
+  padding: 5px;
+  text-align: left;
+}
+
+.todo-card-footer button {
+  width: 45%;
+  background: #f1d736;
+  border: none;
+}
+
+.todo-card-footer input[type=checkbox] {
+  border: none;
+  width: 20px;
+}
+
+.todo-card-footer button:hover {
+  width: 45%;
+  background: #f1993d;
+  border: none;
+}
+
+.todo-card-footer button:focus{
+  width: 45%;
+  background: #f16e54;
+  outline: 0px;
+}
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

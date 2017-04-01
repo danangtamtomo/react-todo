@@ -1,10 +1,3 @@
 {
-  "todos": [
-    {
-      "id": 1,
-      "todo": "Makan siang pake gado-gado",
-      "is_complete": false,
-      "createdAt": "1976-04-19T12:59-0500"
-    }
-  ]
+  "todos": []
 }

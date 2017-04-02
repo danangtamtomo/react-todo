@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import Todo from './Todo'
 
-import {fetchTodos} from '../actions'
+import {fetchTodos, searchTodos} from '../actions'
 
 class Todolist extends Component {
   componentDidMount() {
@@ -12,7 +12,21 @@ class Todolist extends Component {
 
   render() {
     return (
+
       <div className="container">
+      <div className="row">
+        <input style={{
+                  width: '400px',
+                  margin: 'auto',
+                  borderBottom: 'solid thin',
+                  borderTop: 'none',
+                  borderLeft: 'none',
+                  borderRight: 'none',
+                  outline: 'none',
+                  padding: '10px'
+              }}
+        type="text" onChange={e => this.props.searchTodos(e.target.value)} placeholder="Search..."/>
+      </div>
           <div className="todo-list">
               {this.props.todos.map(todo => {
                   if (!todo.is_complete) {
@@ -41,11 +55,14 @@ class Todolist extends Component {
 const mapDispatchToProps = dispatch => ({
   fetchTodos: () => {
     dispatch(fetchTodos())
+  },
+  searchTodos: keyword => {
+    dispatch(searchTodos(keyword))
   }
 })
 
 const mapStateToProps = state => {
-  return {todos: state.todos}
+  return {todos: state.todos.filterTodos}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todolist)

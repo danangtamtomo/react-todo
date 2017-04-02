@@ -13,17 +13,20 @@ export const fetchTodos = () => dispatch => {
     .catch(err => {console.log(err.message)})
 }
 
-export const addTodo = values => dispatch => {
+export const addTodo = todo => dispatch => {
   let url = 'http://localhost:4000/todos'
   fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(values)
+    body: JSON.stringify(todo)
   })
     .then((response) => {
-      dispatch(fetchTodos())
+      dispatch({
+        type: 'ADD_TODO',
+        todo: todo
+      })
     })
     .catch(err => {console.log(err.message)})
 }
@@ -49,7 +52,8 @@ export const updateTodo = (id, newValues) => dispatch => {
     body: JSON.stringify(newValues)
   })
     .then((response) => {
-      dispatch(fetchTodos())
+    //  console.log(response);
+    //  dispatch(fetchTodos())
     })
     .catch(err => {console.log(err.message)})
 }
@@ -77,6 +81,11 @@ export const deleteTodoAction = id => dispatch => {
 }
 
 export const editTodo = (e, oldValues) => dispatch => {
-  oldValues.todo = e.target.value 
+  oldValues.todo = e.target.value
   dispatch(updateTodo(oldValues.id, oldValues))
 }
+
+export const searchTodos = keyword => ({
+  type: 'SEARCH_TODOS',
+  keyword: keyword
+})

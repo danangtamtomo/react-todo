@@ -24,10 +24,10 @@ class Todo extends Component {
         </p>
         {this.state.isTodoEdit
         ? <p className="todo-content" onClick={e => this.editTodoHandler(e)}>
-            <TextareaAutosize autoFocus={true} 
-                              defaultValue={this.props.todo.todo} 
+            <TextareaAutosize autoFocus={true}
+                              defaultValue={this.props.todo.todo}
                               onBlur={e => Promise.resolve(this.props.editTodo(e, this.props.todo)).then(() => this.editTodoHandler(e)) }>
-                              </TextareaAutosize></p> 
+                              </TextareaAutosize></p>
         : <p className="todo-content" onClick={e => this.editTodoHandler(e)}>{this.props.todo.todo}</p>}
         <p className="todo-created-at">
           <Moment fromNow>{this.props.todo.createdAt}</Moment>

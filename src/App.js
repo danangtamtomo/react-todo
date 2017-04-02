@@ -10,11 +10,13 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
+          <h1>React Todo</h1>
+          <br/>
           <img src={logo} className="App-logo" alt="logo" />
           <br/>
           <input className="todo-create-init" type="text" onKeyPress={e => this.props.addTodoHandler(e)} placeholder="Create todo..."/>
         </div>
-        <Todolist />
+          <Todolist />
       </div>
     );
   }

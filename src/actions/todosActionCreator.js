@@ -35,6 +35,7 @@ export const addTodoHandler = e => dispatch => {
       is_complete: false,
       createdAt: new Date()
     }))
+    e.target.value = ''
   }
 }
 
@@ -53,7 +54,7 @@ export const updateTodo = (id, newValues) => dispatch => {
     .catch(err => {console.log(err.message)})
 }
 
-export const deleteTodo = (id) => dispatch => {
+export const deleteTodo = id => dispatch => {
   let url = 'http://localhost:4000/todos/'+id
   fetch(url, {
     method: 'DELETE',
@@ -65,18 +66,17 @@ export const deleteTodo = (id) => dispatch => {
 
 }
 
-export const updateIsComplete = (e, oldStatus) => dispatch => {
-  if (e.target.checked) {
-    let isComplete = !oldStatus.is_complete
-    oldStatus.is_complete = isComplete
-    dispatch(updateTodo(oldStatus.id, oldStatus))
-  } else {
-    let isComplete = !oldStatus.is_complete
-    oldStatus.is_complete = isComplete
-    dispatch(updateTodo(oldStatus.id, oldStatus))
-  }
+export const updateIsComplete = oldStatus => dispatch => {
+  let isComplete = !oldStatus.is_complete
+  oldStatus.is_complete = isComplete
+  dispatch(updateTodo(oldStatus.id, oldStatus))
 }
 
-export const deleteTodoAction = (id) => dispatch => {
+export const deleteTodoAction = id => dispatch => {
   dispatch(deleteTodo(id))
+}
+
+export const editTodo = (e, oldValues) => dispatch => {
+  oldValues.todo = e.target.value 
+  dispatch(updateTodo(oldValues.id, oldValues))
 }

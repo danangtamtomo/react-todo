@@ -6,24 +6,32 @@ import Todo from './Todo'
 import {fetchTodos} from '../actions'
 
 class Todolist extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     this.props.fetchTodos()
   }
 
   render() {
     return (
-      <div className="todo-list container">
-        {this.props.todos.map(todo => {
-          return(
-              <div className="col-md-3">
-                <Todo key={todo.id} todo={todo}/>
-              </div>
-            )
-        })}
+      <div className="container">
+          <div className="todo-list">
+              {this.props.todos.map(todo => {
+                  if (!todo.is_complete) {
+                    return(
+                      <Todo key={todo.id} todo={todo}/>
+                    )
+                  }
+              })}
+          </div>
+          <hr/>
+            <div className="todo-list">
+              {this.props.todos.map(todo => {
+                if (todo.is_complete) {
+                  return(
+                    <Todo key={todo.id} todo={todo}/>
+                  )
+                }
+              })}
+            </div>
       </div>
     )
   }

@@ -1,5 +1,10 @@
 .App {
+  /*font-family: 'Raleway', sans-serif;*/
+  /*font-family: 'Karla', sans-serif;*/
+  font-family: 'Maven Pro', sans-serif;
+  /*font-style: oblique;nt-family: 'Quattrocento Sans', sans-serif;*/
   text-align: center;
+  height: 820vh;
 }
 
 .App-logo {
@@ -8,28 +13,27 @@
 }
 
 .App-header {
-  background-color: #f1ee4a;
   height: auto;
   padding: 20px;
-  color: white;
+  color: #5f5f5f;
 }
 
 .todo-create-init {
-  background: white;
+  background: inherit;
   width: 400px;
   height: 35px;
   margin: 6px auto 3px auto;
-  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
   text-align: left;
   padding: 8px;
   color: #5f5f5f;
-  border: none;
+  border-bottom: solid thin;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .todo-create-init:focus{
-  height: 140px;
+  height: 50px;
   -webkit-transition: margin 0.6s, height 0.6s, top 0.6s, left 0.6s;
   -moz-transition: margin 0.6s, height 0.6s, top 0.6s, left 0.6s;
   -ms-transition: margin 0.6s, height 0.6s, top 0.6s, left 0.6s;
@@ -42,26 +46,48 @@
 }
 
 .todo-card {
-  background: #f1ee4a;
-  padding: 4px;
+  justify-content: space-between;
+  display: flex;
+  background: #da6658;
+  color: #fff;
   -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
-  margin-bottom: 20px;
+  box-shadow: 0px 1px 2px 0px rgba(3, 3, 3, 0.75);
+}
+
+.todo-card p {
+  margin: 0px;
+}
+.todo-card:hover .btn-todo-delete {
+  visibility: visible;
+  animation: fadein 0.8s;
+  color: #f1ee4a;
+  cursor: pointer;
+}
+
+.todo-check {
+  padding: 8px;
+  font-size: 18px;
+  color: #f1ee4a;
 }
 
 .todo-created-at {
   /*border: groove thin bisque;*/
   text-align: right;
   padding: 3px;
-  font-size: 11px;
-  color: #4d4d4d;
+  font-size: 14px;
+  color: #fff;
 }
 
 
 .todo-content {
-  text-align: justify;
+  font-size: 19px;
+  text-align: left;
+  width: 75%;
   padding: 3px;
+  text-overflow: ellipsis;
+  text-overflow: "..........";
+  overflow: hidden;
 }
 
 .todo-list {
@@ -69,37 +95,61 @@
 }
 
 .todo-card-footer {
-  background: #f1d736;
+  height: 100%;
   padding: 5px;
-  text-align: left;
 }
 
 .todo-card-footer button {
-  width: 45%;
-  background: #f1d736;
+  height: 100%;
   border: none;
+  border-radius: 20px;
 }
 
-.todo-card-footer input[type=checkbox] {
+input[type=checkbox]:checked .todo-card{
+  background: #f1ee4a;
+}
+
+.todo-card input[type=checkbox] {
   border: none;
-  width: 20px;
+  width: 15px;
+  padding: 15px;
+  border-radius: 0px;
 }
 
-.todo-card-footer button:hover {
-  width: 45%;
-  background: #f1993d;
+.btn-todo-delete {
+  visibility: hidden;
+}
+
+textarea {
   border: none;
+  background: inherit;
+  outline: none;
+  overflow: auto;
+  resize: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 100%;
 }
 
-.todo-card-footer button:focus{
-  width: 45%;
-  background: #f16e54;
-  outline: 0px;
-}
 
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media screen and (min-width: 760px){
+  .todo-card {
+    margin: auto;
+    width: 40%;
+  }
+
 }

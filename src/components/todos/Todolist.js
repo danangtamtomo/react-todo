@@ -1,9 +1,11 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import SearchTodos from './SearchTodos'
 
 import Todo from './Todo'
 
-import {fetchTodos, searchTodos} from '../actions'
+import { fetchTodos } from '../../actions'
 
 class Todolist extends Component {
   componentDidMount() {
@@ -12,21 +14,8 @@ class Todolist extends Component {
 
   render() {
     return (
-
       <div className="container">
-      <div className="row">
-        <input style={{
-                  width: '400px',
-                  margin: 'auto',
-                  borderBottom: 'solid thin',
-                  borderTop: 'none',
-                  borderLeft: 'none',
-                  borderRight: 'none',
-                  outline: 'none',
-                  padding: '10px'
-              }}
-        type="text" onChange={e => this.props.searchTodos(e.target.value)} placeholder="Search..."/>
-      </div>
+          <SearchTodos />
           <div className="todo-list">
               {this.props.todos.map(todo => {
                   if (!todo.is_complete) {
@@ -55,14 +44,12 @@ class Todolist extends Component {
 const mapDispatchToProps = dispatch => ({
   fetchTodos: () => {
     dispatch(fetchTodos())
-  },
-  searchTodos: keyword => {
-    dispatch(searchTodos(keyword))
   }
 })
 
 const mapStateToProps = state => {
-  return {todos: state.todos.filterTodos}
+  console.log(state)
+  return {todos: state.todos}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todolist)

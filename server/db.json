@@ -1,76 +1,28 @@
 {
   "todos": [
     {
-      "todo": "Driving",
+      "todo": "H",
+      "is_complete": false,
+      "createdAt": "2017-04-03T04:06:22.540Z",
+      "id": 1
+    },
+    {
+      "todo": "ff",
+      "is_complete": false,
+      "createdAt": "2017-04-03T06:35:30.524Z",
+      "id": 2
+    },
+    {
+      "todo": "Black mamba",
+      "is_complete": false,
+      "createdAt": "2017-04-03T06:36:15.382Z",
+      "id": 3
+    },
+    {
+      "todo": "ss",
       "is_complete": true,
-      "createdAt": "2017-04-02T20:43:45.470Z",
+      "createdAt": "2017-04-03T07:38:51.944Z",
       "id": 4
-    },
-    {
-      "todo": "afa",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:20:28.799Z",
-      "id": 5
-    },
-    {
-      "todo": "tes",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:21:27.105Z",
-      "id": 6
-    },
-    {
-      "todo": "dsfas",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:21:44.901Z",
-      "id": 7
-    },
-    {
-      "todo": "dok",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:22:30.719Z",
-      "id": 8
-    },
-    {
-      "todo": "eike",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:23:03.238Z",
-      "id": 9
-    },
-    {
-      "todo": "kkekee",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:26:39.656Z",
-      "id": 10
-    },
-    {
-      "todo": "oke",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:28:38.081Z",
-      "id": 11
-    },
-    {
-      "todo": "oke",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:29:04.955Z",
-      "id": 12
-    },
-    {
-      "todo": "fadf",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:30:09.057Z",
-      "id": 13
-    },
-    {
-      "todo": "crot",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:30:47.814Z",
-      "id": 14
-    },
-    {
-      "todo": "tes",
-      "is_complete": false,
-      "createdAt": "2017-04-02T21:31:06.749Z",
-      "id": 15
     }
   ]
 }

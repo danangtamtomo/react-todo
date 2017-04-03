@@ -23,10 +23,12 @@ export const addTodo = todo => dispatch => {
     body: JSON.stringify(todo)
   })
     .then((response) => {
-      dispatch({
-        type: 'ADD_TODO',
-        todo: todo
-      })
+      dispatch(fetchTodos())
+
+      // dispatch({
+      //   type: 'ADD_TODO',
+      //   todo: todo
+      // })
     })
     .catch(err => {console.log(err.message)})
 }
@@ -52,8 +54,7 @@ export const updateTodo = (id, newValues) => dispatch => {
     body: JSON.stringify(newValues)
   })
     .then((response) => {
-    //  console.log(response);
-    //  dispatch(fetchTodos())
+      dispatch(fetchTodos())
     })
     .catch(err => {console.log(err.message)})
 }

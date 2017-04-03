@@ -1,29 +1,16 @@
-export const todos = (state = {todos:[], filterTodos:[]}, action) => {
+export const todos = (state = [], action) => {
   switch (action.type) {
     case 'GET_TODOS':
-      return Object.assign({}, state, {
-						todos: action.todos,
-						filterTodos: action.todos
-					})
+      return action.todos.slice()
       break;
-		case 'SEARCH_TODOS':
-			let filterTodos = state.todos.filter(todo => todo.todo.toLowerCase().search(action.keyword.toLowerCase()) !== -1)
-			return Object.assign({}, state, {filterTodos})
+    case 'SEARCH_TODOS':
+			let filteredTodos = state.filter(todo => todo.todo.toLowerCase().search(action.keyword.toLowerCase()) !== -1)
+      console.log(filteredTodos)
+			return Object.assign({}, state, filteredTodos)
 			break;
-		case 'ADD_TODO':
-			// let todos = state
-			// let newTodo = Object.assign({}, todos {})
-			// newTodo.todos.filterTodos.push(action.todo)
-			// newTodo.todos.todos.push(action.todo)
-			// console.log(newTodo);
-console.log({todos:Object.assign({}, state, {
-	todos:action.todo,
-	filterTodos:action.todo
-})});
-			return {todos: Object.assign({}, state, {
-				todos:action.todo,
-				filterTodos:action.todo
-			})}
+    case 'ADD_TODO':
+
+			return state
 			break;
     default:
       return state

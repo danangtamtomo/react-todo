@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import TextareaAutosize from 'react-autosize-textarea';
-import {connect} from 'react-redux'
-import {deleteTodoAction, editTodo, updateIsComplete} from '../actions'
+import { connect } from 'react-redux'
+import { deleteTodoAction, editTodo, updateIsComplete } from '../../actions'
 import Moment from 'react-moment'
 
 class Todo extends Component {
